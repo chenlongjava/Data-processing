@@ -32,7 +32,7 @@ public class Output {
     public void output(List<String> desc,List<String> afterdesc) throws IOException
     {
         FileOutputStream fos=new FileOutputStream(new File("/Users/chenlong/Desktop/result.txt"));
-        OutputStreamWriter osw=new OutputStreamWriter(fos, "UTF-8");
+        OutputStreamWriter osw=new OutputStreamWriter(fos);
         BufferedWriter bw=new BufferedWriter(osw);
 
         for(int i=0;i<desc.size();i++)
@@ -42,14 +42,20 @@ public class Output {
             String s1[]=desc.get(i).split(" ");
             String s2[]=afterdesc.get(i).split(" ");
 
-            for(int j=0;j<s1.length;j++)
-            {
-                //System.out.println(s1[j]+"---"+s2[j]);
-                bw.write(s1[j]+"\t"+s2[j]+"\n");
-            }
             bw.write("*****新的关键字*****\n");
             bw.write("----------------------------------\n");
+
+            for(int j=0;j<s1.length;j++)
+            {
+                System.out.println(s1[j]+"---"+s2[j]);
+                bw.write(s1[j]+"\t"+s2[j]+"\n");
+            }
+
+            bw.flush();
         }
+            bw.close();
+            osw.close();
+            fos.close();
 
     }
 }

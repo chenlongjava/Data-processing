@@ -13,7 +13,7 @@ public class Entityfilter {
 
     public String SolEntity(String Entity){
 
-        String regEx="[- _ ( )]";
+        String regEx="[ _ ( )]";
 
         //可以在中括号内加上任何想要替换的字符，实际上是一个正则表达式
 
@@ -34,7 +34,7 @@ public class Entityfilter {
     }
     public String SolDesc(String Desc){
 
-        String regEx="[- _ ( )]";
+        String regEx="[ _ ( )]";
 
         //可以在中括号内加上任何想要替换的字符，实际上是一个正则表达式
 
